@@ -3,9 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MCCIA MSME Helpline</title>
-<link rel="stylesheet" href="fonts/fonts.css">
-<link rel="stylesheet" href="styles.css">
+<title>MCCIA MSME Helpline — Free Expert Consultation for MSMEs</title>
+<meta name="description" content="A free, one-to-one MSME advisory helpline from MCCIA — expert guidance on business setup, GST, finance, government schemes, GeM, marketing, trade and more, across 300+ districts in India.">
+<meta name="theme-color" content="#0f5bb5">
+<link rel="icon" href="logo-sm.png">
+<meta property="og:title" content="MCCIA MSME Helpline">
+<meta property="og:description" content="Free, expert one-to-one MSME advisory from MCCIA — across 9 business domains and 300+ districts.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="hero-full.png">
+<link rel="stylesheet" href="styles.css?v=10">
 </head>
 <body>
 
@@ -18,9 +24,7 @@
     <a href="#">SERVICES ▾</a>
     <a href="#">INITIATIVES ▾</a>
     <a href="#">MEDIA ▾</a>
-    <a href="#">ABOUT US ▾</a>
-    <div class="menu-extra"><a href="#">Institutions</a><a href="#">Auto Cluster</a><a href="#">Electronic Cluster</a><a href="#">Awards</a><a href="#">Initiatives</a><a href="#">Mfg Lean Transfer</a><a href="#">Technology Transfer</a><a href="#">PPCR</a></div>
-  </nav>
+    <a href="#">ABOUT US ▾</a>  </nav>
   <span class="sep"></span>
   <a href="#" class="login">LOGIN</a>
 </header>
@@ -28,34 +32,95 @@
 <main class="wrap">
 
   <section class="top">
-    <aside class="side" aria-label="Quick links">
-      <a href="#">Institutions</a><hr>
-      <a href="#">Auto Cluster</a>
-      <a href="#">Electronic Cluster</a>
-      <a href="#">Awards ▾</a><hr>
-      <a href="#">Initiatives</a><hr>
-      <a href="#">Mfg Lean Transfer</a>
-      <a href="#">Technology Transfer</a>
-      <a href="#">PPCR</a>
-    </aside>
-
     <div class="hero">
       <div class="hero-text">
-        <span class="bar"></span>
+        <span class="kicker">An MCCIA Initiative for MSMEs</span>
         <h1>MCCIA MSME Helpline</h1>
         <h3>Your Trusted Partner for MSME Growth and Success</h3>
         <p>Get expert guidance for your business —<br>completely free of cost.</p>
         <div class="btns">
-          <a href="https://wa.me/918806109000" target="_blank" rel="noopener" class="btn primary">Schedule Now</a>
+          <a href="#bookModal" class="btn primary js-lead">Schedule Now</a>
+          <a href="#bookModal" class="btn wa js-lead"><svg class="wa-ic" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.44-1.42a9.9 9.9 0 0 0 4.6 1.14h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm0 17.93h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.23.85.86-3.15-.2-.32a8.2 8.2 0 0 1-1.26-4.37c0-4.55 3.71-8.26 8.27-8.26 2.21 0 4.28.86 5.84 2.42a8.2 8.2 0 0 1 2.42 5.84c0 4.56-3.71 8.31-8.21 8.31zm4.53-6.19c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42-.14 0-.31-.02-.47-.02a.9.9 0 0 0-.66.31c-.23.25-.86.84-.86 2.05s.89 2.38 1.01 2.54c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29z"/></svg> Chat on WhatsApp</a>
         </div>
-        <ul class="perks"><li>100% free, one-to-one advice</li><li>Experts across 9 business domains</li><li>Serving MSMEs in all 36 districts</li></ul>
-        <p class="phone"><a href="tel:+918308809334">+91 8308809334</a></p>
+        <ul class="perks"><li>Serving MSMEs in 300+ districts</li></ul>
+        <div class="hero-phones">
+          <p class="phone"><small>MSME Helpline:</small> <a href="tel:+918308809334">+91 8308809334</a></p>
+          <span class="phone-sep" aria-hidden="true">•</span>
+          <p class="phone"><small>Office:</small> <a href="tel:+912025709288">+91 2025709288</a></p>
+        </div>
       </div>
-      <div class="hero-card"><img src="hero-full.png" width="1200" height="1500" fetchpriority="high" alt="MCCIA MSME Helpline - Your Gateway to Expert Advice at Zero Cost"></div>
+      <div class="hero-card">
+        <img src="hero-full.png" width="1200" height="1500" fetchpriority="high" alt="MCCIA MSME Helpline - Your Gateway to Expert Advice at Zero Cost">
+      </div>
     </div>
   </section>
 
-  <section class="how">
+  <h2 class="title">Supported By &amp; In Association With</h2>
+  <span class="bar"></span>
+  <section id="partners-band" aria-label="Supported by and in association with">
+    <style>
+      #partners-band{width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:36px 32px;background:#f9fbfd;border-top:1px solid #dbe7f5;border-bottom:1px solid #dbe7f5;display:flex;justify-content:center}
+      #partners-band .pb-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:64px;max-width:1400px}
+      #partners-band .pb-row img{display:block;flex:none;height:105px!important;max-height:105px!important;width:auto!important;max-width:none!important;object-fit:contain;transition:transform .2s ease}
+      #partners-band .pb-row img:hover{transform:scale(1.05)}
+      @media(max-width:900px){#partners-band .pb-row{gap:40px}#partners-band .pb-row img{height:75px!important;max-height:75px!important}}
+      @media(max-width:600px){#partners-band .pb-row{gap:28px}#partners-band .pb-row img{height:58px!important;max-height:58px!important}}
+    </style>
+    <div class="pb-row">
+      <img src="img/partner-tata-autocomp.png" width="50" height="48" alt="TATA Autocomp" loading="lazy">
+      <img src="img/partner-ramp.png" width="35" height="48" alt="RAMP - Raising and Accelerating MSME Performance" loading="lazy">
+      <img src="img/partner-msme.png" width="59" height="48" alt="Ministry of Micro, Small and Medium Enterprises, Government of India" loading="lazy">
+      <img src="img/partner-mssidc.png" width="59" height="48" alt="MSSIDC - Maharashtra Small Scale Industries Development Corporation" loading="lazy">
+      <img src="img/partner-maharashtra.png" width="37" height="48" alt="Government of Maharashtra" loading="lazy">
+      <img src="img/partner-worldbank.png" width="175" height="48" alt="World Bank Group" loading="lazy">
+    </div>
+  </section>
+
+  <section class="stats reveal">
+    <h3>Trusted by MSMEs<br>Across India<span class="bar"></span></h3>
+    <div><b>10,000+</b><span>Consultations</span></div>
+    <div><b>5,000+</b><span>MSMEs Impacted</span></div>
+    <div><b>100+</b><span>Industry Experts</span></div>
+    <div><b>300+</b><span>Districts Covered</span></div>
+  </section>
+
+  <section class="reach reveal">
+    <div class="reach-l">
+      <h2>Our Reach Across India</h2>
+      <p>Supporting MSMEs in 300+ districts across every state and union territory.</p>
+      <span class="bar"></span>
+      <ul class="states">
+        <li>All States &amp; UTs</li><li id="distCount">300+ Districts</li>
+      </ul>
+      <div class="picked" aria-live="polite">
+        <small>Selected district</small>
+        <b id="mapPicked">Hover or tap a district</b>
+        <span>MSME Helpline support available</span>
+        <div class="picked-actions" id="pickedActions" hidden>
+          <a href="#bookModal" class="btn primary sm js-lead" id="pickedBookBtn">Schedule for this District</a>
+          <a href="tel:+918308809334" class="btn wa sm" id="pickedCallBtn">Call Helpline</a>
+        </div>
+      </div>
+      <p class="legend"><i></i>Districts covered</p>
+      <p class="map-note">A few newly-formed districts aren't outlined on the map yet — MSME Helpline support is available there too.</p>
+    </div>
+    <figure class="reach-map">
+      <div class="map-box" id="indiaMap">
+        <div class="map-zoom-controls">
+          <button type="button" class="map-zoom-btn" id="mapZoomIn" aria-label="Zoom in">+</button>
+          <button type="button" class="map-zoom-btn" id="mapZoomOut" aria-label="Zoom out">−</button>
+          <button type="button" class="map-zoom-btn reset" id="mapZoomReset" aria-label="Reset zoom">⟲</button>
+        </div>
+        <div class="map-viewport" id="mapViewport">
+          <img src="img/india-map.svg" width="612" height="696" loading="lazy" alt="Outline map of India">
+        </div>
+        <span class="map-tip" id="mapTip" hidden></span>
+      </div>
+      <figcaption>District boundaries: <a href="https://github.com/datameet/maps" target="_blank" rel="noopener">DataMeet India</a>, <a href="https://creativecommons.org/licenses/by/2.5/in/" target="_blank" rel="noopener">CC BY 2.5 IN</a></figcaption>
+    </figure>
+  </section>
+
+  <section class="how reveal">
     <div class="how-l">
       <h2>How MSME Helpline Works</h2>
       <p>Simple steps to get the right guidance for your business.</p>
@@ -66,88 +131,419 @@
     <div class="step"><b>02</b><h4>Consult</h4><p>Connect with a domain expert</p></div>
     <span class="arrow">›</span>
     <div class="step"><b>03</b><h4>Get Solutions</h4><p>Receive practical guidance for your business</p></div>
-    <a href="https://wa.me/918806109000" target="_blank" rel="noopener" class="btn primary sm">Schedule Now</a>
+    <a href="#bookModal" class="btn primary sm js-lead">Schedule Now</a>
   </section>
 
   <h2 class="title">Expert Consultation Across Key Business Domains</h2>
   <span class="bar"></span>
-  <section class="domains">
-    <a class="card" href="#bookModal"><div><h4>Business Setup</h4><p>Company registration, compliance and more.</p></div></a>
-    <a class="card" href="#bookModal"><div><h4>GST &amp; Taxation</h4><p>GST filing, tax planning and advisory.</p></div></a>
-    <a class="card" href="#bookModal"><div><h4>Finance</h4><p>Funding, investment, working capital and more.</p></div></a>
-    <a class="card" href="#bookModal"><div><h4>Government Schemes</h4><p>Subsidies, incentives and benefits for MSMEs.</p></div></a>
-    <a class="card" href="#bookModal"><div><h4>GeM</h4><p>Onboarding, procurement and marketplace support.</p></div></a>
-    <a class="card" href="#bookModal"><div><h4>Marketing &amp; Branding</h4><p>Digital marketing, brand building and growth strategies.</p></div></a>
-    <a class="card" href="#bookModal"><div><h4>Import &amp; Export</h4><p>Trade compliance, documentation and market access.</p></div></a>
-    <a class="card" href="#bookModal"><div><h4>AI Consultation</h4><p>Leverage AI for business growth and efficiency.</p></div></a>
-    <a class="card" href="#bookModal"><div><h4>Project Proposal &amp; DPR</h4><p>Project reports, DPR preparation and funding support.</p></div></a>
+  <section class="domains reveal">
+    <a class="card" href="#faq-business-setup"><div><h4>Business Setup</h4><p>Company registration, compliance and more.</p></div></a>
+    <a class="card" href="#faq-gst-taxation"><div><h4>GST &amp; Taxation</h4><p>GST filing, tax planning and advisory.</p></div></a>
+    <a class="card" href="#faq-finance"><div><h4>Finance</h4><p>Funding, investment, working capital and more.</p></div></a>
+    <a class="card" href="#faq-govt-schemes"><div><h4>Government Schemes</h4><p>Subsidies, incentives and benefits for MSMEs.</p></div></a>
+    <a class="card" href="#faq-gem"><div><h4>GeM</h4><p>Onboarding, procurement and marketplace support.</p></div></a>
+    <a class="card" href="#faq-marketing"><div><h4>Marketing &amp; Branding</h4><p>Digital marketing, brand building and growth strategies.</p></div></a>
+    <a class="card" href="#faq-import-export"><div><h4>Import &amp; Export</h4><p>Trade compliance, documentation and market access.</p></div></a>
+    <a class="card" href="#faq-ai"><div><h4>AI Consultation</h4><p>Leverage AI for business growth and efficiency.</p></div></a>
+    <a class="card" href="#faq-dpr"><div><h4>Project Proposal &amp; DPR</h4><p>Project reports, DPR preparation and funding support.</p></div></a>
   </section>
 
-  <section class="hear">
+  <section class="hear reveal">
     <div class="hear-l">
       <h2>Hear From MSMEs</h2>
       <p><b>Real Businesses. Real Challenges. Real Solutions.</b></p>
       <p class="blue">Watch how MCCIA MSME Helpline has helped businesses like yours grow.</p>
       <a class="more" href="https://youtube.com/playlist?list=PLabGmx_4hbhdK0cOpp7I7gFn0x5pmYg4L" target="_blank" rel="noopener">Watch all stories </a>
+      <button type="button" class="show-all" id="showAllVids" aria-expanded="false">Show all</button>
       <span class="bar"></span>
     </div>
-    <a class="vid" href="#vidModal" data-yt="ecjJ7Sg0KC0"><div class="thumb real" style="background-image:url(https://i.ytimg.com/vi/ecjJ7Sg0KC0/hqdefault.jpg)"><span class="play"></span></div><div class="vbody"><div class="who"><span class="av" aria-hidden="true">SM</span><div><b>Sarvesh More</b><span>Organic Foods</span></div></div><span class="tag">Food Processing</span></div></a>
-    <a class="vid" href="#vidModal" data-yt="Qv2qC5zlb5U"><div class="thumb real" style="background-image:url(https://i.ytimg.com/vi/Qv2qC5zlb5U/hqdefault.jpg)"><span class="play"></span></div><div class="vbody"><div class="who"><span class="av" aria-hidden="true">DP</span><div><b>Divijay Patil</b><span>DP EXIM</span></div></div><span class="tag">Import &amp; Export</span></div></a>
-    <a class="vid" href="#vidModal" data-yt="NJmMCBXtee0"><div class="thumb real" style="background-image:url(https://i.ytimg.com/vi/NJmMCBXtee0/hqdefault.jpg)"><span class="play"></span></div><div class="vbody"><div class="who"><span class="av" aria-hidden="true">RS</span><div><b>Ratika Suryavanshi</b><span>Sangam Ceramics, Sangli</span></div></div><span class="tag">Manufacturing</span></div></a>
+    <div class="vid-wrap">
+      <div class="vid-controls">
+        <button type="button" class="vid-nav prev" id="vidPrev" aria-label="Previous video">‹</button>
+        <button type="button" class="vid-nav next" id="vidNext" aria-label="Next video">›</button>
+      </div>
+      <div class="vid-scroll" id="vidScroll">
+        <a class="vid" href="#vidModal" data-yt="ecjJ7Sg0KC0">
+          <div class="thumb real" style="background-image:url(https://i.ytimg.com/vi/ecjJ7Sg0KC0/hqdefault.jpg)">
+            <span class="play-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+            </span>
+            <small>03:45</small>
+          </div>
+          <div class="vbody">
+            <div class="who"><span class="av" aria-hidden="true">SM</span><div><b>Sarvesh More</b><span>Organic Foods</span></div></div>
+            <p class="vid-quote">"Received end-to-end guidance for FSSAI licensing and scaling production."</p>
+            <span class="tag">Food Processing</span>
+          </div>
+        </a>
+        <a class="vid" href="#vidModal" data-yt="Qv2qC5zlb5U">
+          <div class="thumb real" style="background-image:url(https://i.ytimg.com/vi/Qv2qC5zlb5U/hqdefault.jpg)">
+            <span class="play-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+            </span>
+            <small>04:12</small>
+          </div>
+          <div class="vbody">
+            <div class="who"><span class="av" aria-hidden="true">DP</span><div><b>Divijay Patil</b><span>DP EXIM</span></div></div>
+            <p class="vid-quote">"Got clarity on IEC registration, buyer discovery, and export documentation."</p>
+            <span class="tag">Import &amp; Export</span>
+          </div>
+        </a>
+        <a class="vid" href="#vidModal" data-yt="NJmMCBXtee0">
+          <div class="thumb real" style="background-image:url(https://i.ytimg.com/vi/NJmMCBXtee0/hqdefault.jpg)">
+            <span class="play-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+            </span>
+            <small>03:20</small>
+          </div>
+          <div class="vbody">
+            <div class="who"><span class="av" aria-hidden="true">RS</span><div><b>Ratika Suryavanshi</b><span>Sangam Ceramics, Sangli</span></div></div>
+            <p class="vid-quote">"Expert advice helped us secure machinery subsidies under state schemes."</p>
+            <span class="tag">Manufacturing</span>
+          </div>
+        </a>
+        <a class="vid" href="#vidModal" data-yt="AXMnPNSoUV8">
+          <div class="thumb real" style="background-image:url(https://i.ytimg.com/vi/AXMnPNSoUV8/hqdefault.jpg)">
+            <span class="play-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+            </span>
+            <small>04:05</small>
+          </div>
+          <div class="vbody">
+            <div class="who"><span class="av" aria-hidden="true">VR</span><div><b>Vikas Rai</b><span>SSB Trading Company</span></div></div>
+            <p class="vid-quote">"Financial and working capital advisory made running business easier."</p>
+            <span class="tag">Finance</span>
+          </div>
+        </a>
+        <a class="vid" href="#vidModal" data-yt="Y5488b5Tbb0">
+          <div class="thumb real" style="background-image:url(https://i.ytimg.com/vi/Y5488b5Tbb0/hqdefault.jpg)">
+            <span class="play-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+            </span>
+            <small>03:50</small>
+          </div>
+          <div class="vbody">
+            <div class="who"><span class="av" aria-hidden="true">VS</span><div><b>Vijay Sangale</b><span>Global Logistics</span></div></div>
+            <p class="vid-quote">"Simplified international shipping rules and export compliance for us."</p>
+            <span class="tag">Import &amp; Export</span>
+          </div>
+        </a>
+        <a class="vid" href="#vidModal" data-yt="7ya7GjECUrk">
+          <div class="thumb real" style="background-image:url(https://i.ytimg.com/vi/7ya7GjECUrk/hqdefault.jpg)">
+            <span class="play-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+            </span>
+            <small>05:15</small>
+          </div>
+          <div class="vbody">
+            <div class="who"><span class="av" aria-hidden="true">YG</span><div><b>Yogesh Galvakwar</b><span>Tech Solutions</span></div></div>
+            <p class="vid-quote">"Highly insightful one-to-one consultation on market expansion."</p>
+            <span class="tag">Business Setup</span>
+          </div>
+        </a>
+        <a class="vid" href="#vidModal" data-yt="dR3CPtEAAFg">
+          <div class="thumb real" style="background-image:url(https://i.ytimg.com/vi/dR3CPtEAAFg/hqdefault.jpg)">
+            <span class="play-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+            </span>
+            <small>03:30</small>
+          </div>
+          <div class="vbody">
+            <div class="who"><span class="av" aria-hidden="true">UB</span><div><b>Umesh Bagate</b><span>Engineering Works</span></div></div>
+            <p class="vid-quote">"Step-by-step guidance to set up our new manufacturing enterprise."</p>
+            <span class="tag">Business Setup</span>
+          </div>
+        </a>
+      </div>
+    </div>
   </section>
 
   <h2 class="title">MCCIA Publications</h2>
   <p class="sub">Insights, Reports &amp; Resources for MSME Growth</p>
   <span class="bar"></span>
-  <section class="pubs">
+  <section class="pubs reveal">
     <div class="pub"><div class="cover"><img src="covers/100-case-studies.png" alt="Compilation of 100 Case Studies cover" loading="lazy"></div><div><h4>Compilation of 100 Case Studies</h4><p>Real stories of guidance to transformation from MSMEs supported by the MSME Helpline.</p><a href="https://www.mcciapune.com/media/Publication/Publication_File/MSME_Helpline_Compilation_of_100_Case_Studies_Proof_28-4-2026.pdf" target="_blank" rel="noopener" class="vp">View Publication </a></div></div>
-    <div class="pub"><div class="cover"><img src="covers/ai-case-studies.png" alt="AI Compilation of Case Studies cover" loading="lazy"></div><div><h4>AI Compilation of Case Studies</h4><p>Case studies on how MSMEs are using AI to grow and work more efficiently.</p><a href="https://www.mcciapune.com/media/Publication/Publication_File/REVISED_MCCIA_100__AI_Compilation_of_Case_Study_Final_for_P_uKpU5dm.pdf" target="_blank" rel="noopener" class="vp">View Publication </a></div></div>
     <div class="pub"><div class="cover"><img src="covers/msme-handbook.png" alt="MSME Handbook cover" loading="lazy"></div><div><h4>MSME Handbook</h4><p>A comprehensive guide covering various government schemes for MSMEs.</p><a href="https://www.mcciapune.com/media/Publication/Publication_File/MCCIA_Government_Schemes_Handbook_Revised_30-03-2026.pdf" target="_blank" rel="noopener" class="vp">View Publication </a></div></div>
-    <div class="pub"><div class="cover"><img src="covers/msme-margdarshak-pustika.png" alt="MSME मार्गदर्शक पुस्तिका cover" loading="lazy"></div><div><h4>MSME मार्गदर्शक पुस्तिका</h4><p>केंद्र आणि राज्य सरकारच्या MSME योजनांची समग्र माहिती पुस्तिका.</p><a href="https://www.mcciapune.com/media/Publication/Publication_File/MCCIA_Government_Schemes_2025_Final_Marathi_Proof_27-4-2026_1.pdf" target="_blank" rel="noopener" class="vp">View Publication </a></div></div>
-    <div class="pub"><div class="cover"><img src="covers/21-faqs.png" alt="21 FAQs on Every Crucial Business Area cover" loading="lazy"></div><div><h4>21 FAQs on Every Crucial Business Area</h4><p>Answers on every crucial business area, from starting up to scaling up.</p><a href="https://www.mcciapune.com/media/Publication/Publication_File/MCCIA_FAQ__2.0_Proof_15-04-2026.pdf" target="_blank" rel="noopener" class="vp">View Publication </a></div></div>
-    <div class="pub"><div class="cover"><img src="covers/21-faqs-marathi.png" alt="२१ कळीचे प्रश्न cover" loading="lazy"></div><div><h4>२१ कळीचे प्रश्न</h4><p>उद्योग सुरू कसा करायचा ते विस्तार कसा करायचा, यासंबंधी नेहमी विचारले जाणारे महत्त्वाचे प्रश्न आणि त्यांची समर्पक उत्तरे.</p><a href="https://www.mcciapune.com/media/Publication/Publication_File/MCCIA_FAQ__Marathi_2_Proof_6-6-2026.pdf" target="_blank" rel="noopener" class="vp">View Publication </a></div></div>
-  </section>
-
-  <section class="stats">
-    <h3>Trusted by MSMEs<br>Across Maharashtra<span class="bar"></span></h3>
-    <div><b>10,000+</b><span>Consultations</span></div>
-    <div><b>5,000+</b><span>MSMEs Impacted</span></div>
-    <div><b>100+</b><span>Industry Experts</span></div>
-    <div><b>300+</b><span>Districts Covered</span></div>
+    <div class="pub"><div class="cover"><img src="covers/21-faqs-2.png" alt="21 FAQs 2.0 on Every Crucial Business Area cover" loading="lazy"></div><div><h4>21 FAQs 2.0 on Every Crucial Business Area</h4><p>Answers on every crucial business area, from starting up to scaling up.</p><a href="https://www.mcciapune.com/media/Publication/Publication_File/MCCIA_FAQ__2.0_Proof_15-04-2026.pdf" target="_blank" rel="noopener" class="vp">View Publication </a></div></div>
+    <div class="pub"><div class="cover"><img src="covers/digital-marketing-guide.png" alt="Digital Marketing Step-by-Step Guide: A complete handbook for growing your business online cover" loading="lazy"></div><div><h4>Digital Marketing Guide</h4><p>A complete step-by-step handbook for growing your business online.</p><a href="https://www.mcciapune.com/media/Publication/Publication_File/MCCIA_Social_Media_Marketing_Guide.pdf" target="_blank" rel="noopener" class="vp">View Publication </a></div></div>
+    <div class="pub"><div class="cover"><img src="covers/21-faqs-english.png" alt="21 FAQs on Every Crucial Business Area (English edition) cover" loading="lazy"></div><div><h4>21 FAQs (English Edition)</h4><p>Frequently asked questions on how to start a business and how to grow it, with clear, practical answers.</p><a href="https://www.mcciapune.com/media/Publication/Publication_File/MCCIA_FAQ_English.pdf" target="_blank" rel="noopener" class="vp">View Publication </a></div></div>
+    <div class="pub"><div class="cover"><img src="covers/21-faqs-marathi-2.png" alt="२१ कळीचे प्रश्न २.० - 21 FAQs 2.0 Marathi edition cover" loading="lazy"></div><div><h4>२१ कळीचे प्रश्न २.० (Marathi Edition)</h4><p>उद्योग सुरू कसा करायचा ते उद्योगाचा विस्तार कसा करायचा, यासंबंधी महत्त्वाची उत्तरे.</p><a href="https://mcciapune.com/media/Publication/Publication_File/MCCIA_FAQ__Marathi_2_Proof_6-6-2026.pdf" target="_blank" rel="noopener" class="vp">View Publication </a></div></div>
   </section>
 
   <h2 class="title">Why Choose MCCIA MSME Helpline?</h2>
-  <section class="why">
+  <section class="why reveal">
     <div class="card"><div><h4>Dedicated Experts</h4><p>Experienced professionals across key MSME domains.</p></div></div>
     <div class="card"><div><h4>Customized Solutions</h4><p>Advice tailored to your specific business challenge.</p></div></div>
     <div class="card"><div><h4>Free Consultations</h4><p>Expert one-to-one consultation at zero cost.</p></div></div>
     <div class="card"><div><h4>Actionable Guidance</h4><p>Practical solutions you can actually implement.</p></div></div>
   </section>
 
-  <section class="cta">
-    
+  <section class="cta reveal">
+
     <div class="cta-t"><b>Have an MSME Business Query?</b><p>Get expert guidance from the MCCIA MSME Helpline.</p></div>
-    <a href="https://wa.me/918806109000" target="_blank" rel="noopener" class="btn white">Schedule Your Consultation</a>
+    <a href="#bookModal" class="btn white js-lead">Schedule Your Consultation</a>
     <span class="or">or</span>
-    <div class="cta-p"><div><small>Call / WhatsApp</small><b>+91 8308809334</b></div></div>
+    <div class="cta-p"><div><small>Call / WhatsApp</small><b>+91 8308809334</b></div><div><small>Office</small><b>+91 2025709288</b></div></div>
   </section>
 
 </main>
 
-<div class="modal" id="bookModal">
-  <form class="box" id="bookForm" action="https://wa.me/918806109000" method="get" target="_blank">
+<div class="modal" id="faq-business-setup">
+  <div class="box faqbox">
     <a href="#" class="x" aria-label="Close"><span class="e">✕</span></a>
-    <h3>Schedule Your Free Consultation</h3>
-    <label>Your message (name, phone, topic, preferred slot)<textarea name="text" rows="4" required></textarea></label>
-    <button class="btn primary" type="submit">Send request on WhatsApp</button>
-    <a href="#" class="close-link">Cancel</a>
-  </form>
+    <h3>Business Setup</h3>
+    <ul class="faqlist">
+      <li><a href="#bookModal" class="js-lead" data-domain="Business Setup" data-concern="Choosing a business structure: Should I register as a proprietorship, partnership, LLP or private limited company?"><b>Choosing a business structure:</b> Should I register as a proprietorship, partnership, LLP or private limited company?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="Business Setup" data-concern="Udyam registration: How do I get Udyam registration, and is it free?"><b>Udyam registration:</b> How do I get Udyam registration, and is it free?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="Business Setup" data-concern="Licences and permits: Which licences do I need to start a manufacturing unit (Shop Act, factory licence, pollution NOC)?"><b>Licences and permits:</b> Which licences do I need to start a manufacturing unit (Shop Act, factory licence, pollution NOC)?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="Business Setup" data-concern="Annual compliance: What are the yearly ROC filings for a private limited company?"><b>Annual compliance:</b> What are the yearly ROC filings for a private limited company?</a></li>
+    </ul>
+    <a href="#bookModal" class="btn primary sm">Schedule a Consultation</a>
+  </div>
+</div>
+
+<div class="modal" id="faq-gst-taxation">
+  <div class="box faqbox">
+    <a href="#" class="x" aria-label="Close"><span class="e">✕</span></a>
+    <h3>GST &amp; Taxation</h3>
+    <ul class="faqlist">
+      <li><a href="#bookModal" class="js-lead" data-domain="GST &amp; Taxation" data-concern="GST registration: Is GST registration mandatory if my turnover is below the threshold?"><b>GST registration:</b> Is GST registration mandatory if my turnover is below the threshold?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="GST &amp; Taxation" data-concern="Return filing: Which GST returns do I file: monthly, or quarterly under QRMP?"><b>Return filing:</b> Which GST returns do I file: monthly, or quarterly under QRMP?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="GST &amp; Taxation" data-concern="Input tax credit: Why isn't my input tax credit showing in GSTR-2B, and how do I use the Invoice Management System (IMS)?"><b>Input tax credit:</b> Why isn't my input tax credit showing in GSTR-2B, and how do I use the Invoice Management System (IMS)?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="GST &amp; Taxation" data-concern="Income tax and TDS: Am I eligible for presumptive taxation under Section 44AD?"><b>Income tax and TDS:</b> Am I eligible for presumptive taxation under Section 44AD?</a></li>
+    </ul>
+    <a href="#bookModal" class="btn primary sm">Schedule a Consultation</a>
+  </div>
+</div>
+
+<div class="modal" id="faq-finance">
+  <div class="box faqbox">
+    <a href="#" class="x" aria-label="Close"><span class="e">✕</span></a>
+    <h3>Finance</h3>
+    <ul class="faqlist">
+      <li><a href="#bookModal" class="js-lead" data-domain="Finance" data-concern="Collateral-free loans: How do I get a loan without collateral under CGTMSE?"><b>Collateral-free loans:</b> How do I get a loan without collateral under CGTMSE?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="Finance" data-concern="Working capital: How can I get a cash credit or overdraft limit from my bank?"><b>Working capital:</b> How can I get a cash credit or overdraft limit from my bank?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="Finance" data-concern="Delayed payments: A buyer hasn't paid me within 45 days. How can I recover my payment under the MSMED Act?"><b>Delayed payments:</b> A buyer hasn't paid me within 45 days. How can I recover my payment under the MSMED Act?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="Finance" data-concern="Equity and investors: How do I approach angel investors or VCs for funding?"><b>Equity and investors:</b> How do I approach angel investors or VCs for funding?</a></li>
+    </ul>
+    <a href="#bookModal" class="btn primary sm">Schedule a Consultation</a>
+  </div>
+</div>
+
+<div class="modal" id="faq-govt-schemes">
+  <div class="box faqbox">
+    <a href="#" class="x" aria-label="Close"><span class="e">✕</span></a>
+    <h3>Government Schemes</h3>
+    <ul class="faqlist">
+      <li><a href="#bookModal" class="js-lead" data-domain="Government Schemes" data-concern="Central schemes: Is PMEGP open for new applications, and am I eligible?"><b>Central schemes:</b> Is PMEGP open for new applications, and am I eligible?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="Government Schemes" data-concern="State schemes: What incentives can I get under Maharashtra's new Industrial Policy 2025?"><b>State schemes:</b> What incentives can I get under Maharashtra's new Industrial Policy 2025?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="Government Schemes" data-concern="Certification support: Can I get a subsidy on ZED or ISO certification costs?"><b>Certification support:</b> Can I get a subsidy on ZED or ISO certification costs?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="Government Schemes" data-concern="Technology upgrade: Are there any central or state subsidies for buying new machinery?"><b>Technology upgrade:</b> Are there any central or state subsidies for buying new machinery?</a></li>
+    </ul>
+    <a href="#bookModal" class="btn primary sm">Schedule a Consultation</a>
+  </div>
+</div>
+
+<div class="modal" id="faq-gem">
+  <div class="box faqbox">
+    <a href="#" class="x" aria-label="Close"><span class="e">✕</span></a>
+    <h3>GeM</h3>
+    <ul class="faqlist">
+      <li><a href="#bookModal" class="js-lead" data-domain="GeM" data-concern="Seller registration: How do I register my business as a seller on GeM?"><b>Seller registration:</b> How do I register my business as a seller on GeM?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="GeM" data-concern="Bidding: How do I take part in a GeM bid, and do MSEs get an exemption from the bid deposit (EMD)?"><b>Bidding:</b> How do I take part in a GeM bid, and do MSEs get an exemption from the bid deposit (EMD)?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="GeM" data-concern="Catalogue listing: Why is my product listing getting rejected on GeM?"><b>Catalogue listing:</b> Why is my product listing getting rejected on GeM?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="GeM" data-concern="Payments and orders: How long does government payment take after delivery on GeM?"><b>Payments and orders:</b> How long does government payment take after delivery on GeM?</a></li>
+    </ul>
+    <a href="#bookModal" class="btn primary sm">Schedule a Consultation</a>
+  </div>
+</div>
+
+<div class="modal" id="faq-marketing">
+  <div class="box faqbox">
+    <a href="#" class="x" aria-label="Close"><span class="e">✕</span></a>
+    <h3>Marketing &amp; Branding</h3>
+    <ul class="faqlist">
+      <li><a href="#bookModal" class="js-lead" data-domain="Marketing &amp; Branding" data-concern="Digital marketing: How can I get customers through Google and social media on a small budget?"><b>Digital marketing:</b> How can I get customers through Google and social media on a small budget?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="Marketing &amp; Branding" data-concern="Brand identity: How do I create a logo and brand that stands out?"><b>Brand identity:</b> How do I create a logo and brand that stands out?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="Marketing &amp; Branding" data-concern="Trademark protection: How do I register a trademark for my brand name?"><b>Trademark protection:</b> How do I register a trademark for my brand name?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="Marketing &amp; Branding" data-concern="E-commerce and ONDC: How do I start selling on Amazon, Flipkart or ONDC?"><b>E-commerce and ONDC:</b> How do I start selling on Amazon, Flipkart or ONDC?</a></li>
+    </ul>
+    <a href="#bookModal" class="btn primary sm">Schedule a Consultation</a>
+  </div>
+</div>
+
+<div class="modal" id="faq-import-export">
+  <div class="box faqbox">
+    <a href="#" class="x" aria-label="Close"><span class="e">✕</span></a>
+    <h3>Import &amp; Export</h3>
+    <ul class="faqlist">
+      <li><a href="#bookModal" class="js-lead" data-domain="Import &amp; Export" data-concern="IEC registration: How do I get an Importer Exporter Code (IEC)?"><b>IEC registration:</b> How do I get an Importer Exporter Code (IEC)?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="Import &amp; Export" data-concern="Export documentation: What documents do I need for my first export shipment?"><b>Export documentation:</b> What documents do I need for my first export shipment?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="Import &amp; Export" data-concern="Export incentives: How do I claim RoDTEP benefits or duty drawback?"><b>Export incentives:</b> How do I claim RoDTEP benefits or duty drawback?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="Import &amp; Export" data-concern="Finding buyers: How can I find international buyers for my product?"><b>Finding buyers:</b> How can I find international buyers for my product?</a></li>
+    </ul>
+    <a href="#bookModal" class="btn primary sm">Schedule a Consultation</a>
+  </div>
+</div>
+
+<div class="modal" id="faq-ai">
+  <div class="box faqbox">
+    <a href="#" class="x" aria-label="Close"><span class="e">✕</span></a>
+    <h3>AI Consultation</h3>
+    <ul class="faqlist">
+      <li><a href="#bookModal" class="js-lead" data-domain="AI Consultation" data-concern="AI tools for daily work: Which AI tools can help with accounting, customer service or content creation?"><b>AI tools for daily work:</b> Which AI tools can help with accounting, customer service or content creation?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="AI Consultation" data-concern="Process automation: How can I automate inventory, billing or follow-ups in my business?"><b>Process automation:</b> How can I automate inventory, billing or follow-ups in my business?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="AI Consultation" data-concern="AI in manufacturing: Can AI help with quality checks or predictive maintenance in my factory?"><b>AI in manufacturing:</b> Can AI help with quality checks or predictive maintenance in my factory?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="AI Consultation" data-concern="Cost and adoption: How much does it cost to adopt AI, and where should a small business start?"><b>Cost and adoption:</b> How much does it cost to adopt AI, and where should a small business start?</a></li>
+    </ul>
+    <a href="#bookModal" class="btn primary sm">Schedule a Consultation</a>
+  </div>
+</div>
+
+<div class="modal" id="faq-dpr">
+  <div class="box faqbox">
+    <a href="#" class="x" aria-label="Close"><span class="e">✕</span></a>
+    <h3>Project Proposal &amp; DPR</h3>
+    <ul class="faqlist">
+      <li><a href="#bookModal" class="js-lead" data-domain="Project Proposal &amp; DPR" data-concern="DPR preparation: What should a Detailed Project Report include for a bank loan?"><b>DPR preparation:</b> What should a Detailed Project Report include for a bank loan?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="Project Proposal &amp; DPR" data-concern="Financial projections: How do I prepare a projected balance sheet and cash flow for 5 years?"><b>Financial projections:</b> How do I prepare a projected balance sheet and cash flow for 5 years?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="Project Proposal &amp; DPR" data-concern="Project feasibility: How do I check if my project idea is financially viable?"><b>Project feasibility:</b> How do I check if my project idea is financially viable?</a></li>
+      <li><a href="#bookModal" class="js-lead" data-domain="Project Proposal &amp; DPR" data-concern="Bank and scheme submission: What format of project report do banks need for a PMEGP or term loan application?"><b>Bank and scheme submission:</b> What format of project report do banks need for a PMEGP or term loan application?</a></li>
+    </ul>
+    <a href="#bookModal" class="btn primary sm">Schedule a Consultation</a>
+  </div>
+</div>
+
+<div class="modal" id="bookModal">
+  <div class="box leadbox">
+    <a href="#" class="x" aria-label="Close"><span class="e">✕</span></a>
+    <h3>MCCIA</h3>
+    <p class="lead-intro">We'd be happy to connect. Share a few details and our team will get back to you.</p>
+    <p class="lead-status" id="leadStatus" hidden></p>
+    <form id="bookForm">
+      <label>Person name *<input type="text" name="personName" placeholder="Your full name" required maxlength="120"></label>
+      <label>Company name *<input type="text" name="companyName" placeholder="Company or organisation" required maxlength="160"></label>
+      <label>Phone number *<input type="tel" name="phone" inputmode="tel" placeholder="e.g. +91 98765 43210" required minlength="7" maxlength="20" pattern="[+\(\)0-9 .\-]{7,20}" title="Enter a valid phone number using digits, spaces, +, parentheses or hyphens."></label>
+      <label>Domain (optional)
+        <select name="domain">
+          <option value="">Select a domain</option>
+          <option>Business Setup</option>
+          <option>GST &amp; Taxation</option>
+          <option>Finance</option>
+          <option>Government Schemes</option>
+          <option>GeM</option>
+          <option>Marketing &amp; Branding</option>
+          <option>Import &amp; Export</option>
+          <option>AI Consultation</option>
+          <option>Project Proposal &amp; DPR</option>
+        </select>
+      </label>
+      <div class="lead-row">
+        <label>Preferred date *<input type="date" name="meetingDate" required>
+          <small class="field-note">Sun, 2nd/4th/5th Sat &amp; MCCIA holidays unavailable</small>
+        </label>
+        <label>Preferred time *
+          <select name="meetingTime" required>
+            <option value="">Select a time</option>
+            <option value="10:00">10:00 AM</option><option value="10:30">10:30 AM</option>
+            <option value="11:00">11:00 AM</option><option value="11:30">11:30 AM</option>
+            <option value="12:00">12:00 PM</option><option value="12:30">12:30 PM</option>
+            <option value="13:00">1:00 PM</option><option value="13:30">1:30 PM</option>
+            <option value="14:00">2:00 PM</option><option value="14:30">2:30 PM</option>
+            <option value="15:00">3:00 PM</option><option value="15:30">3:30 PM</option>
+            <option value="16:00">4:00 PM</option><option value="16:30">4:30 PM</option>
+            <option value="17:00">5:00 PM</option><option value="17:30">5:30 PM</option>
+          </select>
+        </label>
+      </div>
+      <label>Concern (optional)<textarea name="concern" rows="3" maxlength="1000" placeholder="Briefly describe your query"></textarea></label>
+      <button class="btn primary" type="submit">Submit</button>
+      <p class="fineprint">Your details will be used by MCCIA to respond to your enquiry.</p>
+    </form>
+    <div class="lead-success" id="leadSuccess" hidden>
+      <div class="lead-success-mark" aria-hidden="true">✓</div>
+      <h4>Thank you, submitted!</h4>
+      <p>Your request has been received. Our team will contact you shortly.</p>
+      <button class="btn primary sm" type="button" id="leadAnother">Book another consultation</button>
+    </div>
+  </div>
 </div>
 
 <div class="modal" id="vidModal">
   <div class="box"><a href="#" class="x" aria-label="Close"><span class="e">✕</span></a>
     <h3>Success Story</h3><div class="player"></div></div>
 </div>
+<script>
+(function(){
+  // Deploy Code.gs as an Apps Script Web App (see GOOGLE_SHEETS_SETUP.md) and paste its /exec URL + API key below.
+  var WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyouyiikCn8S82YYx0SfCBIADk8k5wi7RGeUiYl_i4CLDA2_dT6YhXNLJz5Yi2CQSa4/exec';
+  var API_KEY = ''; // paste your Apps Script API key here (see GOOGLE_SHEETS_SETUP.md)
+
+  var form = document.getElementById('bookForm');
+  if(!form) return;
+  var status = document.getElementById('leadStatus');
+  var success = document.getElementById('leadSuccess');
+  var domainField = form.querySelector('[name="domain"]');
+  var concernField = form.querySelector('[name="concern"]');
+
+  document.querySelectorAll('a.js-lead').forEach(function(a){
+    a.addEventListener('click', function(){
+      domainField.value = a.dataset.domain || '';
+      concernField.value = a.dataset.concern || '';
+    });
+  });
+
+  function showForm(){
+    form.reset();
+    status.hidden = true;
+    success.hidden = true;
+    form.hidden = false;
+  }
+  document.getElementById('leadAnother').addEventListener('click', showForm);
+  window.addEventListener('hashchange', function(){ if(location.hash !== '#bookModal') showForm(); });
+
+  // Minimum selectable date = today (holiday/weekend rules are enforced server-side in Code.gs).
+  form.meetingDate.min = new Date().toISOString().slice(0,10);
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!WEB_APP_URL || WEB_APP_URL.indexOf('PASTE_YOUR') === 0){
+      status.hidden = false;
+      status.textContent = 'Setup incomplete: deploy Code.gs and paste its Web App URL + API key in index.html (see GOOGLE_SHEETS_SETUP.md).';
+      return;
+    }
+    var payload = {
+      personName: form.personName.value,
+      companyName: form.companyName.value,
+      phone: form.phone.value,
+      domain: form.domain.value,
+      meetingDate: form.meetingDate.value,
+      meetingTime: form.meetingTime.value,
+      concern: form.concern.value,
+      submittedAt: new Date().toISOString()
+    };
+    var btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    status.hidden = true;
+    fetch(WEB_APP_URL, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'},
+      body: new URLSearchParams({apiKey: API_KEY, payload: JSON.stringify(payload)})
+    }).then(function(r){ return r.json(); }).then(function(result){
+      if(!result.ok) throw new Error(result.error || 'The request could not be sent.');
+      form.hidden = true;
+      success.hidden = false;
+    }).catch(function(error){
+      status.hidden = false;
+      status.textContent = error.message || 'Something went wrong. Please try again or call us directly.';
+    }).finally(function(){
+      btn.disabled = false;
+      btn.textContent = 'Submit';
+    });
+  });
+})();
+</script>
 <script>
 (function(){
   var p=document.querySelector('#vidModal .player');
@@ -160,5 +556,220 @@
   window.addEventListener('hashchange',function(){if(location.hash!=='#vidModal')clear();});
 })();
 </script>
+<script>
+(function(){
+  var btn=document.getElementById('showAllVids');
+  var scroll=document.getElementById('vidScroll');
+  if(!btn||!scroll)return;
+  btn.addEventListener('click',function(){
+    var expanded=scroll.classList.toggle('expanded');
+    btn.textContent=expanded?'Show less':'Show all';
+    btn.setAttribute('aria-expanded',expanded?'true':'false');
+  });
+  var vidPrev = document.getElementById('vidPrev');
+  var vidNext = document.getElementById('vidNext');
+  if(vidPrev && scroll){
+    vidPrev.addEventListener('click', function(){
+      scroll.scrollBy({left: -260, behavior: 'smooth'});
+    });
+  }
+  if(vidNext && scroll){
+    vidNext.addEventListener('click', function(){
+      scroll.scrollBy({left: 260, behavior: 'smooth'});
+    });
+  }
+})();
+</script>
+<script>
+(function(){
+  // Prevent jumping to top of page when closing modals with href="#"
+  document.querySelectorAll('.modal .x').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      var scrollPos = window.scrollY || window.pageYOffset;
+      if(history.pushState){
+        history.pushState(null, null, ' ');
+      } else {
+        location.hash = '';
+      }
+      window.scrollTo(0, scrollPos);
+    });
+  });
+
+  // Also close modal when clicking outside the box (backdrop click) without jumping
+  document.querySelectorAll('.modal').forEach(function(modal){
+    modal.addEventListener('click', function(e){
+      if(e.target === modal){
+        var scrollPos = window.scrollY || window.pageYOffset;
+        if(history.pushState){
+          history.pushState(null, null, ' ');
+        } else {
+          location.hash = '';
+        }
+        window.scrollTo(0, scrollPos);
+      }
+    });
+  });
+
+  // Close with Escape key without jump
+  window.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && location.hash){
+      var scrollPos = window.scrollY || window.pageYOffset;
+      if(history.pushState){
+        history.pushState(null, null, ' ');
+      } else {
+        location.hash = '';
+      }
+      window.scrollTo(0, scrollPos);
+    }
+  });
+})();
+</script>
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)||!els.length){els.forEach&&els.forEach(function(el){el.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){io.observe(el);});
+})();
+</script>
+<script src="img/india-districts.js"></script>
+<script>
+(function(){
+  var box=document.getElementById('indiaMap'),tip=document.getElementById('mapTip'),out=document.getElementById('mapPicked');
+  var pickedActions=document.getElementById('pickedActions'),pickedBookBtn=document.getElementById('pickedBookBtn');
+  if(!box||!window.INDIA_DISTRICTS)return;
+  var NS='http://www.w3.org/2000/svg',svg=document.createElementNS(NS,'svg'),active=null;
+  svg.setAttribute('viewBox','0 0 591.6 585.2');svg.setAttribute('role','group');svg.setAttribute('aria-label','Map of India: districts covered by MCCIA MSME Helpline');
+  
+  // Composite outer border glow/stroke layer
+  var outerBorder = document.createElementNS(NS, 'path');
+  var allD = INDIA_DISTRICTS.map(function(s){ return s[2]; }).join(' ');
+  outerBorder.setAttribute('d', allD);
+  outerBorder.setAttribute('class', 'india-outer-border');
+  outerBorder.setAttribute('aria-hidden', 'true');
+  svg.appendChild(outerBorder);
+
+  INDIA_DISTRICTS.forEach(function(s){
+    var p=document.createElementNS(NS,'path'),label=s[1]+', '+s[0];
+    p.setAttribute('d',s[2]);p.setAttribute('tabindex','0');p.setAttribute('role','button');p.setAttribute('aria-label',label+', covered');
+    p.dataset.name=label;p.dataset.district=s[1].toLowerCase();svg.appendChild(p);
+  });
+  var viewport = document.getElementById('mapViewport');
+  if(viewport) {
+    viewport.replaceChild(svg, viewport.querySelector('img'));
+  } else {
+    box.replaceChild(svg, box.querySelector('img'));
+  }
+
+  // Zoom & Pan Controller
+  var currentScale = 1;
+  var minScale = 1;
+  var maxScale = 2.8;
+  var zoomStep = 0.35;
+  var zoomTarget = viewport || svg;
+
+  function updateTransform(){
+    svg.style.transformOrigin = 'center center';
+    svg.style.transition = 'transform .25s ease';
+    svg.style.transform = 'scale(' + currentScale + ')';
+    if(tip) tip.hidden = true;
+  }
+
+  var btnIn = document.getElementById('mapZoomIn');
+  var btnOut = document.getElementById('mapZoomOut');
+  var btnReset = document.getElementById('mapZoomReset');
+
+  if(btnIn){
+    btnIn.addEventListener('click', function(){
+      if(currentScale < maxScale){
+        currentScale = Math.min(maxScale, currentScale + zoomStep);
+        updateTransform();
+      }
+    });
+  }
+
+  if(btnOut){
+    btnOut.addEventListener('click', function(){
+      if(currentScale > minScale){
+        currentScale = Math.max(minScale, currentScale - zoomStep);
+        updateTransform();
+      }
+    });
+  }
+
+  if(btnReset){
+    btnReset.addEventListener('click', function(){
+      currentScale = 1;
+      updateTransform();
+    });
+  }
+
+  var countEl=document.getElementById('distCount');
+  var total=INDIA_DISTRICTS.length;
+  if(countEl){
+    var reduceMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduceMotion||!('IntersectionObserver' in window)){
+      countEl.textContent=total+'+ Districts';
+    }else{
+      countEl.textContent='0+ Districts';
+      var countSection=document.querySelector('.reach');
+      var countIO=new IntersectionObserver(function(entries,obs){
+        entries.forEach(function(entry){
+          if(!entry.isIntersecting)return;
+          obs.disconnect();
+          var start=null,duration=900;
+          function step(ts){
+            if(start===null)start=ts;
+            var progress=Math.min((ts-start)/duration,1);
+            countEl.textContent=Math.round(progress*total)+'+ Districts';
+            if(progress<1)requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        });
+      },{threshold:.3});
+      if(countSection)countIO.observe(countSection);
+    }
+  }
+  function place(e){
+    var r=box.getBoundingClientRect(),x,y;
+    if(e&&e.clientX!=null){x=e.clientX-r.left;y=e.clientY-r.top;}
+    else{var b=active.getBoundingClientRect();x=b.left+b.width/2-r.left;y=b.top-r.top;}
+    var tw=tip.offsetWidth||120;
+    x=Math.min(Math.max(x,tw/2+4),r.width-tw/2-4);
+    y=Math.max(y,28);
+    tip.style.left=x+'px';tip.style.top=y+'px';
+  }
+  function pick(p,e){
+    if(active)active.classList.remove('on');
+    active=p;p.classList.add('on');
+    tip.textContent=p.dataset.name;tip.hidden=false;place(e);
+    out.textContent=p.dataset.name;
+    if(pickedActions){
+      pickedActions.hidden = false;
+      if(pickedBookBtn){
+        pickedBookBtn.textContent = 'Schedule for ' + p.dataset.name.split(',')[0];
+        pickedBookBtn.dataset.concern = 'MSME query from ' + p.dataset.name;
+      }
+    }
+  }
+  svg.addEventListener('pointermove',function(e){if(e.target.tagName==='path'){if(e.target!==active)pick(e.target,e);else place(e);}});
+  svg.addEventListener('pointerleave',function(){tip.hidden=true;});
+  svg.addEventListener('click',function(e){if(e.target.tagName==='path')pick(e.target,e);});
+  svg.addEventListener('focusin',function(e){if(e.target.tagName==='path')pick(e.target);});
+  svg.addEventListener('focusout',function(){tip.hidden=true;});
+})();
+</script>
+<!-- Floating Contact Us Button in bottom right corner -->
+<a href="#bookModal" class="floating-contact-btn js-lead" aria-label="Contact Us">
+  <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
+    <path fill="currentColor" d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/>
+    <path fill="currentColor" d="M7 9h10v2H7zm0-3h10v2H7zm0 6h7v2H7z"/>
+  </svg>
+  <span>Connect with Us</span>
+</a>
+
 </body>
 </html>
