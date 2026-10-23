@@ -500,7 +500,7 @@
     form.hidden = false;
   }
   document.getElementById('leadAnother').addEventListener('click', showForm);
-  window.addEventListener('hashchange', function(){ if(location.hash !== '#bookModal') showForm(); });
+  document.addEventListener('modalclose', function(e){ if(e.detail && e.detail.id === 'bookModal') showForm(); });
 
   // Minimum selectable date = today (holiday/weekend rules are enforced server-side in Code.gs).
   form.meetingDate.min = new Date().toISOString().slice(0,10);
@@ -553,7 +553,7 @@
       p.innerHTML='<iframe src="https://www.youtube.com/embed/'+a.dataset.yt+'?autoplay=1&rel=0" title="Success story" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
     });
   });
-  window.addEventListener('hashchange',function(){if(location.hash!=='#vidModal')clear();});
+  document.addEventListener('modalclose',function(e){if(e.detail && e.detail.id==='vidModal')clear();});
 })();
 </script>
 <script>
@@ -582,46 +582,56 @@
 </script>
 <script>
 (function(){
-  // Prevent jumping to top of page when closing modals with href="#"
-  document.querySelectorAll('.modal .x').forEach(function(btn){
-    btn.addEventListener('click', function(e){
+  // Modal visibility is driven entirely by a JS-toggled "open" class rather than
+  // the URL hash + :target, since history.pushState/location.hash tricks to avoid
+  // a scroll-jump are unreliable (can throw or no-op) when the page is opened as
+  // a local file:// document instead of being served over http(s).
+  var modals = document.querySelectorAll('.modal');
+
+  function closeAll(){
+    modals.forEach(function(m){
+      if(m.classList.contains('open')){
+        m.classList.remove('open');
+        document.dispatchEvent(new CustomEvent('modalclose', {detail:{id: m.id}}));
+      }
+    });
+  }
+
+  function openModal(modal){
+    if(!modal || !modal.classList.contains('modal')) return;
+    closeAll();
+    modal.classList.add('open');
+    document.dispatchEvent(new CustomEvent('modalopen', {detail:{id: modal.id}}));
+  }
+
+  // Open: any link pointing at a modal's id
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href^="#"]');
+    if(!a) return;
+    var id = a.getAttribute('href').slice(1);
+    if(!id) return;
+    var modal = document.getElementById(id);
+    if(modal && modal.classList.contains('modal')){
       e.preventDefault();
-      var scrollPos = window.scrollY || window.pageYOffset;
-      if(history.pushState){
-        history.pushState(null, null, ' ');
-      } else {
-        location.hash = '';
-      }
-      window.scrollTo(0, scrollPos);
-    });
-  });
-
-  // Also close modal when clicking outside the box (backdrop click) without jumping
-  document.querySelectorAll('.modal').forEach(function(modal){
-    modal.addEventListener('click', function(e){
-      if(e.target === modal){
-        var scrollPos = window.scrollY || window.pageYOffset;
-        if(history.pushState){
-          history.pushState(null, null, ' ');
-        } else {
-          location.hash = '';
-        }
-        window.scrollTo(0, scrollPos);
-      }
-    });
-  });
-
-  // Close with Escape key without jump
-  window.addEventListener('keydown', function(e){
-    if(e.key === 'Escape' && location.hash){
-      var scrollPos = window.scrollY || window.pageYOffset;
-      if(history.pushState){
-        history.pushState(null, null, ' ');
-      } else {
-        location.hash = '';
-      }
-      window.scrollTo(0, scrollPos);
+      openModal(modal);
     }
+  });
+
+  // Close: the "x" button, or a backdrop (direct) click on the modal overlay
+  document.addEventListener('click', function(e){
+    var x = e.target.closest('.modal .x');
+    if(x){
+      e.preventDefault();
+      closeAll();
+      return;
+    }
+    var modal = e.target.closest('.modal');
+    if(modal && e.target === modal) closeAll();
+  });
+
+  // Close with Escape key
+  window.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeAll();
   });
 })();
 </script>
@@ -643,69 +653,71 @@
   if(!box||!window.INDIA_DISTRICTS)return;
   var NS='http://www.w3.org/2000/svg',svg=document.createElementNS(NS,'svg'),active=null;
   svg.setAttribute('viewBox','0 0 591.6 585.2');svg.setAttribute('role','group');svg.setAttribute('aria-label','Map of India: districts covered by MCCIA MSME Helpline');
-  
-  // Composite outer border glow/stroke layer
-  var outerBorder = document.createElementNS(NS, 'path');
-  var allD = INDIA_DISTRICTS.map(function(s){ return s[2]; }).join(' ');
-  outerBorder.setAttribute('d', allD);
-  outerBorder.setAttribute('class', 'india-outer-border');
-  outerBorder.setAttribute('aria-hidden', 'true');
+
+  // Composite outline of every district, drawn once underneath as a single thick
+  // stroke so the country's outer border reads clearly against the page background.
+  var outerBorder=document.createElementNS(NS,'path');
+  outerBorder.setAttribute('d',INDIA_DISTRICTS.map(function(s){return s[2];}).join(' '));
+  outerBorder.setAttribute('class','india-outer-border');
+  outerBorder.setAttribute('aria-hidden','true');
   svg.appendChild(outerBorder);
 
   INDIA_DISTRICTS.forEach(function(s){
     var p=document.createElementNS(NS,'path'),label=s[1]+', '+s[0];
     p.setAttribute('d',s[2]);p.setAttribute('tabindex','0');p.setAttribute('role','button');p.setAttribute('aria-label',label+', covered');
-    p.dataset.name=label;p.dataset.district=s[1].toLowerCase();svg.appendChild(p);
+    p.dataset.name=label;svg.appendChild(p);
   });
-  var viewport = document.getElementById('mapViewport');
-  if(viewport) {
-    viewport.replaceChild(svg, viewport.querySelector('img'));
-  } else {
-    box.replaceChild(svg, box.querySelector('img'));
-  }
+
+  var viewport=document.getElementById('mapViewport');
+  if(viewport){viewport.replaceChild(svg,viewport.querySelector('img'));}
+  else{box.replaceChild(svg,box.querySelector('img'));}
 
   // Zoom & Pan Controller
-  var currentScale = 1;
-  var minScale = 1;
-  var maxScale = 2.8;
-  var zoomStep = 0.35;
-  var zoomTarget = viewport || svg;
-
+  var currentScale=1,minScale=1,maxScale=2.8,zoomStep=0.35;
   function updateTransform(){
-    svg.style.transformOrigin = 'center center';
-    svg.style.transition = 'transform .25s ease';
-    svg.style.transform = 'scale(' + currentScale + ')';
-    if(tip) tip.hidden = true;
+    svg.style.transformOrigin='center center';
+    svg.style.transition='transform .25s ease';
+    svg.style.transform='scale('+currentScale+')';
+    if(tip)tip.hidden=true;
   }
+  var btnIn=document.getElementById('mapZoomIn');
+  var btnOut=document.getElementById('mapZoomOut');
+  var btnReset=document.getElementById('mapZoomReset');
+  if(btnIn)btnIn.addEventListener('click',function(){
+    if(currentScale<maxScale){currentScale=Math.min(maxScale,currentScale+zoomStep);updateTransform();}
+  });
+  if(btnOut)btnOut.addEventListener('click',function(){
+    if(currentScale>minScale){currentScale=Math.max(minScale,currentScale-zoomStep);updateTransform();}
+  });
+  if(btnReset)btnReset.addEventListener('click',function(){currentScale=1;updateTransform();});
 
-  var btnIn = document.getElementById('mapZoomIn');
-  var btnOut = document.getElementById('mapZoomOut');
-  var btnReset = document.getElementById('mapZoomReset');
-
-  if(btnIn){
-    btnIn.addEventListener('click', function(){
-      if(currentScale < maxScale){
-        currentScale = Math.min(maxScale, currentScale + zoomStep);
-        updateTransform();
+  function place(e){
+    var r=box.getBoundingClientRect(),x,y;
+    if(e&&e.clientX!=null){x=e.clientX-r.left;y=e.clientY-r.top;}
+    else{var b=active.getBoundingClientRect();x=b.left+b.width/2-r.left;y=b.top-r.top;}
+    var tw=tip.offsetWidth||120;
+    x=Math.min(Math.max(x,tw/2+4),r.width-tw/2-4);
+    y=Math.max(y,28);
+    tip.style.left=x+'px';tip.style.top=y+'px';
+  }
+  function pick(p,e){
+    if(active)active.classList.remove('on');
+    active=p;p.classList.add('on');
+    tip.textContent=p.dataset.name;tip.hidden=false;place(e);
+    out.textContent=p.dataset.name;
+    if(pickedActions){
+      pickedActions.hidden=false;
+      if(pickedBookBtn){
+        pickedBookBtn.textContent='Schedule for '+p.dataset.name.split(',')[0];
+        pickedBookBtn.dataset.concern='MSME query from '+p.dataset.name;
       }
-    });
+    }
   }
-
-  if(btnOut){
-    btnOut.addEventListener('click', function(){
-      if(currentScale > minScale){
-        currentScale = Math.max(minScale, currentScale - zoomStep);
-        updateTransform();
-      }
-    });
-  }
-
-  if(btnReset){
-    btnReset.addEventListener('click', function(){
-      currentScale = 1;
-      updateTransform();
-    });
-  }
+  svg.addEventListener('pointermove',function(e){if(e.target.tagName==='path'){if(e.target!==active)pick(e.target,e);else place(e);}});
+  svg.addEventListener('pointerleave',function(){tip.hidden=true;});
+  svg.addEventListener('click',function(e){if(e.target.tagName==='path')pick(e.target,e);});
+  svg.addEventListener('focusin',function(e){if(e.target.tagName==='path')pick(e.target);});
+  svg.addEventListener('focusout',function(){tip.hidden=true;});
 
   var countEl=document.getElementById('distCount');
   var total=INDIA_DISTRICTS.length;
@@ -733,33 +745,6 @@
       if(countSection)countIO.observe(countSection);
     }
   }
-  function place(e){
-    var r=box.getBoundingClientRect(),x,y;
-    if(e&&e.clientX!=null){x=e.clientX-r.left;y=e.clientY-r.top;}
-    else{var b=active.getBoundingClientRect();x=b.left+b.width/2-r.left;y=b.top-r.top;}
-    var tw=tip.offsetWidth||120;
-    x=Math.min(Math.max(x,tw/2+4),r.width-tw/2-4);
-    y=Math.max(y,28);
-    tip.style.left=x+'px';tip.style.top=y+'px';
-  }
-  function pick(p,e){
-    if(active)active.classList.remove('on');
-    active=p;p.classList.add('on');
-    tip.textContent=p.dataset.name;tip.hidden=false;place(e);
-    out.textContent=p.dataset.name;
-    if(pickedActions){
-      pickedActions.hidden = false;
-      if(pickedBookBtn){
-        pickedBookBtn.textContent = 'Schedule for ' + p.dataset.name.split(',')[0];
-        pickedBookBtn.dataset.concern = 'MSME query from ' + p.dataset.name;
-      }
-    }
-  }
-  svg.addEventListener('pointermove',function(e){if(e.target.tagName==='path'){if(e.target!==active)pick(e.target,e);else place(e);}});
-  svg.addEventListener('pointerleave',function(){tip.hidden=true;});
-  svg.addEventListener('click',function(e){if(e.target.tagName==='path')pick(e.target,e);});
-  svg.addEventListener('focusin',function(e){if(e.target.tagName==='path')pick(e.target);});
-  svg.addEventListener('focusout',function(){tip.hidden=true;});
 })();
 </script>
 <!-- Floating Contact Us Button in bottom right corner -->
