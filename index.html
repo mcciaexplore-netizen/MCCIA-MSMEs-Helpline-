@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MCCIA MSME Helpline — Free Expert Consultation for MSMEs</title>
-<meta name="description" content="A free, one-to-one MSME advisory helpline from MCCIA — expert guidance on business setup, GST, finance, government schemes, GeM, marketing, trade and more, across 300+ districts in India.">
+<meta name="description" content="A free, one-to-one MSME advisory helpline from MCCIA — expert guidance on business setup, GST, finance, government schemes, GeM, marketing, trade and more, across 350+ districts in India.">
 <meta name="theme-color" content="#0f5bb5">
 <link rel="icon" href="logo-sm.png">
 <meta property="og:title" content="MCCIA MSME Helpline">
-<meta property="og:description" content="Free, expert one-to-one MSME advisory from MCCIA — across 9 business domains and 300+ districts.">
+<meta property="og:description" content="Free, expert one-to-one MSME advisory from MCCIA — across 9 business domains and 350+ districts.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="hero-full.png">
 <link rel="stylesheet" href="styles.css?v=10">
@@ -42,7 +42,7 @@
           <a href="#bookModal" class="btn primary js-lead">Schedule Now</a>
           <a href="#bookModal" class="btn wa js-lead"><svg class="wa-ic" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.44-1.42a9.9 9.9 0 0 0 4.6 1.14h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm0 17.93h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.23.85.86-3.15-.2-.32a8.2 8.2 0 0 1-1.26-4.37c0-4.55 3.71-8.26 8.27-8.26 2.21 0 4.28.86 5.84 2.42a8.2 8.2 0 0 1 2.42 5.84c0 4.56-3.71 8.31-8.21 8.31zm4.53-6.19c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42-.14 0-.31-.02-.47-.02a.9.9 0 0 0-.66.31c-.23.25-.86.84-.86 2.05s.89 2.38 1.01 2.54c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29z"/></svg> Chat on WhatsApp</a>
         </div>
-        <ul class="perks"><li>Serving MSMEs in 300+ districts</li></ul>
+        <ul class="perks"><li>Serving MSMEs in 350+ districts</li></ul>
         <div class="hero-phones">
           <p class="phone"><small>MSME Helpline:</small> <a href="tel:+918308809334">+91 8308809334</a></p>
           <span class="phone-sep" aria-hidden="true">•</span>
@@ -81,16 +81,16 @@
     <div><b>10,000+</b><span>Consultations</span></div>
     <div><b>5,000+</b><span>MSMEs Impacted</span></div>
     <div><b>100+</b><span>Industry Experts</span></div>
-    <div><b>300+</b><span>Districts Covered</span></div>
+    <div><b>350+</b><span>Districts Covered</span></div>
   </section>
 
   <section class="reach reveal">
     <div class="reach-l">
       <h2>Our Reach Across India</h2>
-      <p>Supporting MSMEs in 300+ districts across every state and union territory.</p>
+      <p>Supporting MSMEs in 350+ districts across every state and union territory.</p>
       <span class="bar"></span>
       <ul class="states">
-        <li>All States &amp; UTs</li><li id="distCount">300+ Districts</li>
+        <li>All States &amp; UTs</li><li id="distCount">350+ Districts</li>
       </ul>
       <div class="picked" aria-live="polite">
         <small>Selected district</small>
@@ -116,7 +116,7 @@
         </div>
         <span class="map-tip" id="mapTip" hidden></span>
       </div>
-      <figcaption>District boundaries: <a href="https://github.com/datameet/maps" target="_blank" rel="noopener">DataMeet India</a>, <a href="https://creativecommons.org/licenses/by/2.5/in/" target="_blank" rel="noopener">CC BY 2.5 IN</a></figcaption>
+      <figcaption>District boundaries: <a href="https://github.com/datameet/maps" target="_blank" rel="noopener">DataMeet India</a>, <a href="https://creativecommons.org/licenses/by/2.5/in/" target="_blank" rel="noopener">CC BY 2.5 IN</a>; new/updated districts: <a href="https://github.com/datta07/INDIAN-SHAPEFILES" target="_blank" rel="noopener">INDIAN-SHAPEFILES</a>, MIT License</figcaption>
     </figure>
   </section>
 
@@ -663,13 +663,27 @@
   if(window.INDIA_STATES){
     var clip=document.createElementNS(NS,'clipPath');
     clip.setAttribute('id','indiaClip');
-    var borderG=document.createElementNS(NS,'g');
-    borderG.setAttribute('class','india-outer-border');
-    borderG.setAttribute('aria-hidden','true');
+    // Halo: every state path again, scaled up slightly about the map's centre. Since
+    // this is one rigid transform applied to the whole group, adjacent states stay
+    // perfectly glued together on their shared (interior) edges — only the true outer
+    // silhouette grows outward. That outward sliver is all that peeks out from behind
+    // the identical, unscaled fill layer below, giving a single clean national outline
+    // with no per-state seams instead of a stroke on every individual state path.
+    var haloG=document.createElementNS(NS,'g');
+    haloG.setAttribute('class','india-outer-halo');
+    haloG.setAttribute('aria-hidden','true');
+    var haloScale=1.012,cx=306,cy=348;
+    haloG.setAttribute('transform','translate('+(cx*(1-haloScale))+','+(cy*(1-haloScale))+') scale('+haloScale+')');
+    var fillG=document.createElementNS(NS,'g');
+    fillG.setAttribute('class','india-outer-fill');
+    fillG.setAttribute('aria-hidden','true');
     INDIA_STATES.forEach(function(s){
-      var bp=document.createElementNS(NS,'path');
-      bp.setAttribute('d',s[2]);
-      borderG.appendChild(bp);
+      var hp=document.createElementNS(NS,'path');
+      hp.setAttribute('d',s[2]);
+      haloG.appendChild(hp);
+      var fp=document.createElementNS(NS,'path');
+      fp.setAttribute('d',s[2]);
+      fillG.appendChild(fp);
       var cp=document.createElementNS(NS,'path');
       cp.setAttribute('d',s[2]);
       clip.appendChild(cp);
@@ -677,7 +691,8 @@
     var defs=document.createElementNS(NS,'defs');
     defs.appendChild(clip);
     svg.appendChild(defs);
-    svg.appendChild(borderG);
+    svg.appendChild(haloG);
+    svg.appendChild(fillG);
   }
 
   // District fills, rescaled (bbox-fit) from their native coordinate space onto the
