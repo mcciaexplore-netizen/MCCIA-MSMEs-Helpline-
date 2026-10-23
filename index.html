@@ -645,6 +645,7 @@
   els.forEach(function(el){io.observe(el);});
 })();
 </script>
+<script src="img/india-states.js"></script>
 <script src="img/india-districts.js"></script>
 <script>
 (function(){
@@ -652,21 +653,29 @@
   var pickedActions=document.getElementById('pickedActions'),pickedBookBtn=document.getElementById('pickedBookBtn');
   if(!box||!window.INDIA_DISTRICTS)return;
   var NS='http://www.w3.org/2000/svg',svg=document.createElementNS(NS,'svg'),active=null;
-  svg.setAttribute('viewBox','0 0 591.6 585.2');svg.setAttribute('role','group');svg.setAttribute('aria-label','Map of India: districts covered by MCCIA MSME Helpline');
+  svg.setAttribute('viewBox','0 0 612 696');svg.setAttribute('role','group');svg.setAttribute('aria-label','Map of India: districts covered by MCCIA MSME Helpline');
 
-  // Composite outline of every district, drawn once underneath as a single thick
-  // stroke so the country's outer border reads clearly against the page background.
-  var outerBorder=document.createElementNS(NS,'path');
-  outerBorder.setAttribute('d',INDIA_DISTRICTS.map(function(s){return s[2];}).join(' '));
-  outerBorder.setAttribute('class','india-outer-border');
-  outerBorder.setAttribute('aria-hidden','true');
-  svg.appendChild(outerBorder);
+  // Composite outline of every state/UT (full, gap-free national boundary; the district
+  // dataset below is a subset and leaves holes), drawn once underneath as a single thick
+  // stroke so the whole country's outer border reads clearly against the page background.
+  if(window.INDIA_STATES){
+    var outerBorder=document.createElementNS(NS,'path');
+    outerBorder.setAttribute('d',INDIA_STATES.map(function(s){return s[2];}).join(' '));
+    outerBorder.setAttribute('class','india-outer-border');
+    outerBorder.setAttribute('aria-hidden','true');
+    svg.appendChild(outerBorder);
+  }
 
+  // District fills, rescaled (bbox-fit) from their native coordinate space onto the
+  // state map's viewBox above so the two datasets line up.
+  var distG=document.createElementNS(NS,'g');
+  distG.setAttribute('transform','translate(-10.7043,34.6419) scale(1.070434)');
   INDIA_DISTRICTS.forEach(function(s){
     var p=document.createElementNS(NS,'path'),label=s[1]+', '+s[0];
     p.setAttribute('d',s[2]);p.setAttribute('tabindex','0');p.setAttribute('role','button');p.setAttribute('aria-label',label+', covered');
-    p.dataset.name=label;svg.appendChild(p);
+    p.dataset.name=label;distG.appendChild(p);
   });
+  svg.appendChild(distG);
 
   var viewport=document.getElementById('mapViewport');
   if(viewport){viewport.replaceChild(svg,viewport.querySelector('img'));}
@@ -713,10 +722,10 @@
       }
     }
   }
-  svg.addEventListener('pointermove',function(e){if(e.target.tagName==='path'){if(e.target!==active)pick(e.target,e);else place(e);}});
+  svg.addEventListener('pointermove',function(e){if(e.target.tagName==='path'&&e.target.dataset.name){if(e.target!==active)pick(e.target,e);else place(e);}});
   svg.addEventListener('pointerleave',function(){tip.hidden=true;});
-  svg.addEventListener('click',function(e){if(e.target.tagName==='path')pick(e.target,e);});
-  svg.addEventListener('focusin',function(e){if(e.target.tagName==='path')pick(e.target);});
+  svg.addEventListener('click',function(e){if(e.target.tagName==='path'&&e.target.dataset.name)pick(e.target,e);});
+  svg.addEventListener('focusin',function(e){if(e.target.tagName==='path'&&e.target.dataset.name)pick(e.target);});
   svg.addEventListener('focusout',function(){tip.hidden=true;});
 
   var countEl=document.getElementById('distCount');
