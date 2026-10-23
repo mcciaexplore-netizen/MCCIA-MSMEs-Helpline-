@@ -660,7 +660,9 @@
   // stroke so the whole country's outer border reads clearly against the page background.
   if(window.INDIA_STATES){
     var outerBorder=document.createElementNS(NS,'path');
-    outerBorder.setAttribute('d',INDIA_STATES.map(function(s){return s[2];}).join(' '));
+    // Each state's "d" starts with a relative "m": force it absolute ("M") so this
+    // state's outline doesn't chain off the previous one's end point when concatenated.
+    outerBorder.setAttribute('d',INDIA_STATES.map(function(s){return s[2].replace(/^\s*m/,'M');}).join(' '));
     outerBorder.setAttribute('class','india-outer-border');
     outerBorder.setAttribute('aria-hidden','true');
     svg.appendChild(outerBorder);
