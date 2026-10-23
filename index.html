@@ -661,6 +661,8 @@
   // as-is: each "d" is a relative-coordinate polyline, so merging them into a single
   // path would make every state after the first inherit the wrong starting point.
   if(window.INDIA_STATES){
+    var clip=document.createElementNS(NS,'clipPath');
+    clip.setAttribute('id','indiaClip');
     var borderG=document.createElementNS(NS,'g');
     borderG.setAttribute('class','india-outer-border');
     borderG.setAttribute('aria-hidden','true');
@@ -668,12 +670,22 @@
       var bp=document.createElementNS(NS,'path');
       bp.setAttribute('d',s[2]);
       borderG.appendChild(bp);
+      var cp=document.createElementNS(NS,'path');
+      cp.setAttribute('d',s[2]);
+      clip.appendChild(cp);
     });
+    var defs=document.createElementNS(NS,'defs');
+    defs.appendChild(clip);
+    svg.appendChild(defs);
     svg.appendChild(borderG);
   }
 
   // District fills, rescaled (bbox-fit) from their native coordinate space onto the
-  // state map's viewBox above so the two datasets line up.
+  // state map's viewBox above so the two datasets line up. The rescale is only an
+  // approximate fit, so clip to the exact India outline above: this trims off any
+  // district edges (mostly at coastlines) that would otherwise poke past the border.
+  var distClip=document.createElementNS(NS,'g');
+  if(window.INDIA_STATES)distClip.setAttribute('clip-path','url(#indiaClip)');
   var distG=document.createElementNS(NS,'g');
   distG.setAttribute('transform','translate(-10.7043,34.6419) scale(1.070434)');
   INDIA_DISTRICTS.forEach(function(s){
@@ -681,7 +693,8 @@
     p.setAttribute('d',s[2]);p.setAttribute('tabindex','0');p.setAttribute('role','button');p.setAttribute('aria-label',label+', covered');
     p.dataset.name=label;distG.appendChild(p);
   });
-  svg.appendChild(distG);
+  distClip.appendChild(distG);
+  svg.appendChild(distClip);
 
   var viewport=document.getElementById('mapViewport');
   if(viewport){viewport.replaceChild(svg,viewport.querySelector('img'));}
