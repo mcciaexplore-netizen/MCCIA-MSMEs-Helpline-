@@ -655,17 +655,21 @@
   var NS='http://www.w3.org/2000/svg',svg=document.createElementNS(NS,'svg'),active=null;
   svg.setAttribute('viewBox','0 0 612 696');svg.setAttribute('role','group');svg.setAttribute('aria-label','Map of India: districts covered by MCCIA MSME Helpline');
 
-  // Composite outline of every state/UT (full, gap-free national boundary; the district
-  // dataset below is a subset and leaves holes), drawn once underneath as a single thick
-  // stroke so the whole country's outer border reads clearly against the page background.
+  // Outline of every state/UT (full, gap-free national boundary; the district dataset
+  // below is a subset and leaves holes), drawn underneath so the whole country's outer
+  // border reads clearly against the page background. One <path> per state, each used
+  // as-is: each "d" is a relative-coordinate polyline, so merging them into a single
+  // path would make every state after the first inherit the wrong starting point.
   if(window.INDIA_STATES){
-    var outerBorder=document.createElementNS(NS,'path');
-    // Each state's "d" starts with a relative "m": force it absolute ("M") so this
-    // state's outline doesn't chain off the previous one's end point when concatenated.
-    outerBorder.setAttribute('d',INDIA_STATES.map(function(s){return s[2].replace(/^\s*m/,'M');}).join(' '));
-    outerBorder.setAttribute('class','india-outer-border');
-    outerBorder.setAttribute('aria-hidden','true');
-    svg.appendChild(outerBorder);
+    var borderG=document.createElementNS(NS,'g');
+    borderG.setAttribute('class','india-outer-border');
+    borderG.setAttribute('aria-hidden','true');
+    INDIA_STATES.forEach(function(s){
+      var bp=document.createElementNS(NS,'path');
+      bp.setAttribute('d',s[2]);
+      borderG.appendChild(bp);
+    });
+    svg.appendChild(borderG);
   }
 
   // District fills, rescaled (bbox-fit) from their native coordinate space onto the

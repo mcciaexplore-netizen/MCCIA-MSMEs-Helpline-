@@ -437,9 +437,9 @@ h1,h2,h3,h4,.btn,.nav nav a,.login,.stats b,.step b,.more,.av{font-family:var(--
 .map-viewport{width:100%;height:auto;overflow:hidden;border-radius:12px;cursor:grab}
 .map-viewport:active{cursor:grabbing}
 .map-box svg{display:block;width:100%;height:auto;overflow:visible;filter:drop-shadow(0 10px 28px rgba(15,60,130,.22))}
-.india-outer-border{fill:none!important;stroke:var(--navy)!important;stroke-width:3px!important;stroke-linejoin:round;stroke-linecap:round;pointer-events:none;filter:drop-shadow(0 0 3px rgba(13,63,134,.45))}
-.map-box path:not(.india-outer-border){fill:#1f8a43;stroke:#fff;stroke-width:.8;stroke-linejoin:round;cursor:pointer;transition:fill .15s,stroke .15s}
-.map-box path:not(.india-outer-border):hover,.map-box path:not(.india-outer-border).on{fill:#0f5bb5;stroke:#fff;stroke-width:1.6}
+.map-box .india-outer-border path{fill:none!important;stroke:var(--navy)!important;stroke-width:3px!important;stroke-linejoin:round;stroke-linecap:round;pointer-events:none;cursor:default;filter:drop-shadow(0 0 3px rgba(13,63,134,.45))}
+.map-box path{fill:#1f8a43;stroke:#fff;stroke-width:.8;stroke-linejoin:round;cursor:pointer;transition:fill .15s,stroke .15s}
+.map-box path:hover,.map-box path.on{fill:#0f5bb5;stroke:#fff;stroke-width:1.6}
 .map-box path:focus{outline:none}
 .map-box path:focus-visible{fill:#0f5bb5;stroke:#fff;stroke-width:1.8}
 @media(prefers-reduced-motion:reduce){.map-box path{transition:none}}
