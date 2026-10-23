@@ -684,17 +684,22 @@
   // state map's viewBox above so the two datasets line up. The rescale is only an
   // approximate fit, so clip to the exact India outline above: this trims off any
   // district edges (mostly at coastlines) that would otherwise poke past the border.
-  var distClip=document.createElementNS(NS,'g');
-  if(window.INDIA_STATES)distClip.setAttribute('clip-path','url(#indiaClip)');
+  // Small, isolated island groups are the exception: the shared mainland-tuned fit can
+  // drift them just far enough that they'd be clipped away to nothing, so they render
+  // unclipped (slightly off-position, but visible) instead of disappearing entirely.
   var distG=document.createElementNS(NS,'g');
   distG.setAttribute('transform','translate(-10.7043,34.6419) scale(1.070434)');
+  var distClip=document.createElementNS(NS,'g');
+  if(window.INDIA_STATES)distClip.setAttribute('clip-path','url(#indiaClip)');
+  distG.appendChild(distClip);
+  var unclippedStates={'Andaman and Nicobar Islands':1,'Lakshadweep':1};
   INDIA_DISTRICTS.forEach(function(s){
     var p=document.createElementNS(NS,'path'),label=s[1]+', '+s[0];
     p.setAttribute('d',s[2]);p.setAttribute('tabindex','0');p.setAttribute('role','button');p.setAttribute('aria-label',label+', covered');
-    p.dataset.name=label;distG.appendChild(p);
+    p.dataset.name=label;
+    (unclippedStates[s[0]]?distG:distClip).appendChild(p);
   });
-  distClip.appendChild(distG);
-  svg.appendChild(distClip);
+  svg.appendChild(distG);
 
   var viewport=document.getElementById('mapViewport');
   if(viewport){viewport.replaceChild(svg,viewport.querySelector('img'));}
