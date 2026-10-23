@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MCCIA MSME Helpline — Free Expert Consultation for MSMEs</title>
-<meta name="description" content="A free, one-to-one MSME advisory helpline from MCCIA — expert guidance on business setup, GST, finance, government schemes, GeM, marketing, trade and more, across 350+ districts in India.">
+<meta name="description" content="A free, one-to-one MSME advisory helpline from MCCIA — expert guidance on business setup, GST, finance, government schemes, GeM, marketing, trade and more, across every district in India.">
 <meta name="theme-color" content="#0f5bb5">
 <link rel="icon" href="logo-sm.png">
 <meta property="og:title" content="MCCIA MSME Helpline">
-<meta property="og:description" content="Free, expert one-to-one MSME advisory from MCCIA — across 9 business domains and 350+ districts.">
+<meta property="og:description" content="Free, expert one-to-one MSME advisory from MCCIA — across 9 business domains and every district in India.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="hero-full.png">
 <link rel="stylesheet" href="styles.css?v=10">
@@ -42,7 +42,7 @@
           <a href="#bookModal" class="btn primary js-lead">Schedule Now</a>
           <a href="#bookModal" class="btn wa js-lead"><svg class="wa-ic" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.44-1.42a9.9 9.9 0 0 0 4.6 1.14h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm0 17.93h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.23.85.86-3.15-.2-.32a8.2 8.2 0 0 1-1.26-4.37c0-4.55 3.71-8.26 8.27-8.26 2.21 0 4.28.86 5.84 2.42a8.2 8.2 0 0 1 2.42 5.84c0 4.56-3.71 8.31-8.21 8.31zm4.53-6.19c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42-.14 0-.31-.02-.47-.02a.9.9 0 0 0-.66.31c-.23.25-.86.84-.86 2.05s.89 2.38 1.01 2.54c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29z"/></svg> Chat on WhatsApp</a>
         </div>
-        <ul class="perks"><li>Serving MSMEs in 350+ districts</li></ul>
+        <ul class="perks"><li>Serving MSMEs in every district in India</li></ul>
         <div class="hero-phones">
           <p class="phone"><small>MSME Helpline:</small> <a href="tel:+918308809334">+91 8308809334</a></p>
           <span class="phone-sep" aria-hidden="true">•</span>
@@ -81,16 +81,16 @@
     <div><b>10,000+</b><span>Consultations</span></div>
     <div><b>5,000+</b><span>MSMEs Impacted</span></div>
     <div><b>100+</b><span>Industry Experts</span></div>
-    <div><b>350+</b><span>Districts Covered</span></div>
+    <div><b>780+</b><span>Districts Covered</span></div>
   </section>
 
   <section class="reach reveal">
     <div class="reach-l">
       <h2>Our Reach Across India</h2>
-      <p>Supporting MSMEs in 350+ districts across every state and union territory.</p>
+      <p>Supporting MSMEs in every district across every state and union territory.</p>
       <span class="bar"></span>
       <ul class="states">
-        <li>All States &amp; UTs</li><li id="distCount">350+ Districts</li>
+        <li>All States &amp; UTs</li><li id="distCount">780+ Districts</li>
       </ul>
       <div class="picked" aria-live="polite">
         <small>Selected district</small>
@@ -101,8 +101,6 @@
           <a href="tel:+918308809334" class="btn wa sm" id="pickedCallBtn">Call Helpline</a>
         </div>
       </div>
-      <p class="legend"><i></i>Districts covered</p>
-      <p class="map-note">A few newly-formed districts aren't outlined on the map yet — MSME Helpline support is available there too.</p>
     </div>
     <figure class="reach-map">
       <div class="map-box" id="indiaMap">
@@ -116,7 +114,7 @@
         </div>
         <span class="map-tip" id="mapTip" hidden></span>
       </div>
-      <figcaption>District boundaries: <a href="https://github.com/datameet/maps" target="_blank" rel="noopener">DataMeet India</a>, <a href="https://creativecommons.org/licenses/by/2.5/in/" target="_blank" rel="noopener">CC BY 2.5 IN</a>; new/updated districts: <a href="https://github.com/datta07/INDIAN-SHAPEFILES" target="_blank" rel="noopener">INDIAN-SHAPEFILES</a>, MIT License</figcaption>
+      <figcaption>District boundaries: <a href="https://github.com/datta07/INDIAN-SHAPEFILES" target="_blank" rel="noopener">INDIAN-SHAPEFILES</a>, MIT License</figcaption>
     </figure>
   </section>
 
@@ -653,13 +651,14 @@
   var pickedActions=document.getElementById('pickedActions'),pickedBookBtn=document.getElementById('pickedBookBtn');
   if(!box||!window.INDIA_DISTRICTS)return;
   var NS='http://www.w3.org/2000/svg',svg=document.createElementNS(NS,'svg'),active=null;
-  svg.setAttribute('viewBox','0 0 612 696');svg.setAttribute('role','group');svg.setAttribute('aria-label','Map of India: districts covered by MCCIA MSME Helpline');
+  svg.setAttribute('viewBox','0 0 612 696');svg.setAttribute('role','group');svg.setAttribute('aria-label','Map of India: every district, covered by MCCIA MSME Helpline');
 
-  // Outline of every state/UT (full, gap-free national boundary; the district dataset
-  // below is a subset and leaves holes), drawn underneath so the whole country's outer
-  // border reads clearly against the page background. One <path> per state, each used
-  // as-is: each "d" is a relative-coordinate polyline, so merging them into a single
-  // path would make every state after the first inherit the wrong starting point.
+  // Outline of every state/UT (full, gap-free national boundary), drawn underneath so
+  // the whole country's outer border reads clearly against the page background, and
+  // reused further down to draw the white state-border lines on top of the district
+  // fills. One <path> per state, each used as-is: each "d" is a relative-coordinate
+  // polyline, so merging them into a single path would make every state after the
+  // first inherit the wrong starting point.
   if(window.INDIA_STATES){
     var clip=document.createElementNS(NS,'clipPath');
     clip.setAttribute('id','indiaClip');
@@ -695,26 +694,44 @@
     svg.appendChild(fillG);
   }
 
-  // District fills, rescaled (bbox-fit) from their native coordinate space onto the
-  // state map's viewBox above so the two datasets line up. The rescale is only an
-  // approximate fit, so clip to the exact India outline above: this trims off any
-  // district edges (mostly at coastlines) that would otherwise poke past the border.
-  // Small, isolated island groups are the exception: the shared mainland-tuned fit can
-  // drift them just far enough that they'd be clipped away to nothing, so they render
-  // unclipped (slightly off-position, but visible) instead of disappearing entirely.
+  // District fills. This dataset is already reprojected into this file's own
+  // 612x696 space (a single national affine fit against the state outlines
+  // above), so no further per-group transform is needed here. Still clip to
+  // the exact India outline: coastlines/borders are an approximate fit, so
+  // this trims off any district edges that would otherwise poke past it.
+  // Small, isolated island groups are the exception: the mainland-tuned fit
+  // can drift them just far enough that they'd be clipped away to nothing,
+  // so they render unclipped (slightly off-position, but visible) instead of
+  // disappearing entirely.
   var distG=document.createElementNS(NS,'g');
-  distG.setAttribute('transform','translate(-10.7043,34.6419) scale(1.070434)');
   var distClip=document.createElementNS(NS,'g');
   if(window.INDIA_STATES)distClip.setAttribute('clip-path','url(#indiaClip)');
   distG.appendChild(distClip);
   var unclippedStates={'Andaman and Nicobar Islands':1,'Lakshadweep':1};
   INDIA_DISTRICTS.forEach(function(s){
     var p=document.createElementNS(NS,'path'),label=s[1]+', '+s[0];
-    p.setAttribute('d',s[2]);p.setAttribute('tabindex','0');p.setAttribute('role','button');p.setAttribute('aria-label',label+', covered');
+    p.setAttribute('d',s[2]);p.setAttribute('tabindex','0');p.setAttribute('role','button');p.setAttribute('aria-label',label);
     p.dataset.name=label;
     (unclippedStates[s[0]]?distG:distClip).appendChild(p);
   });
   svg.appendChild(distG);
+
+  // State/UT border lines, drawn on top of every district fill so viewers can
+  // still tell which state they're in. This is deliberately separate from the
+  // halo trick above (which only hides seams between this map's OWN adjacent
+  // district shapes): these are solid, uniform-width lines on top of solid
+  // fills, not a gap-filling layer, so they can't reintroduce that seam mess.
+  if(window.INDIA_STATES){
+    var borderG=document.createElementNS(NS,'g');
+    borderG.setAttribute('class','state-borders');
+    borderG.setAttribute('aria-hidden','true');
+    INDIA_STATES.forEach(function(s){
+      var bp=document.createElementNS(NS,'path');
+      bp.setAttribute('d',s[2]);
+      borderG.appendChild(bp);
+    });
+    svg.appendChild(borderG);
+  }
 
   var viewport=document.getElementById('mapViewport');
   if(viewport){viewport.replaceChild(svg,viewport.querySelector('img'));}
