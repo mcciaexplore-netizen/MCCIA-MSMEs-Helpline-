@@ -439,8 +439,9 @@ h1,h2,h3,h4,.btn,.nav nav a,.login,.stats b,.step b,.more,.av{font-family:var(--
 .map-box svg{display:block;width:100%;height:auto;overflow:visible;filter:drop-shadow(0 10px 28px rgba(15,60,130,.22))}
 .map-box .india-outer-halo{filter:drop-shadow(0 0 3px rgba(13,63,134,.45))}
 .map-box .india-outer-halo path{fill:var(--navy)!important;stroke:none!important;pointer-events:none;cursor:default}
-.map-box .india-outer-fill path{fill:#1f8a43!important;stroke:#1f8a43!important;stroke-width:1px!important;stroke-linejoin:round;pointer-events:none;cursor:default}
-.map-box path{fill:#1f8a43;stroke:#1f8a43;stroke-width:.3;stroke-linejoin:round;cursor:pointer;transition:fill .15s,stroke .15s}
+.map-box .india-outer-fill path{fill:#fff!important;stroke:#fff!important;stroke-width:1px!important;stroke-linejoin:round;pointer-events:none;cursor:default}
+.map-box path{fill:#fff;stroke:#fff;stroke-width:.3;stroke-linejoin:round;cursor:pointer;transition:fill .15s,stroke .15s}
+.map-box path.covered{fill:#1f8a43;stroke:#1f8a43}
 .map-box path:hover,.map-box path.on{fill:#0f5bb5;stroke:#fff;stroke-width:1.6}
 .map-box path:focus{outline:none}
 .map-box path:focus-visible{fill:#0f5bb5;stroke:#fff;stroke-width:1.8}
